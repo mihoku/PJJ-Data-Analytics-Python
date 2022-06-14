@@ -12,14 +12,17 @@ panjang_input = len(supposedly_palindrome)
 bilangan_uji = int(supposedly_palindrome)
 result = True
 
-for i in range(panjang_input):
+#selama angkanya belum habis(atau minus jika jumlah angka di bilangan palindrom ganjil, maka iterasi dijalankan terus menerus)
+while(bilangan_uji>0):
+  jumlah_angka_tersisa = len("%s"%bilangan_uji)
   #apakah floor division dari hasil perpangkatan tertinggi sepuluh sama dengan modula hasil perpangkatan terrendah sepuluh, dst..
-  digit_depan = "%s"%(bilangan_uji // 10**(panjang_input-i-1))
-  digit_belakang = ("%s"%(bilangan_uji % 10**(i+1)))[::-1]
+  digit_depan = bilangan_uji // 10**(jumlah_angka_tersisa-1)
+  digit_belakang = bilangan_uji % 10
   test = digit_depan==digit_belakang
-  
-  #print("digit depan : %s digit belakang: %s" %(digit_depan, digit_belakang))
   result = result and test
+
+  #angka yang sudah diuji dihapus dari bilangan awal
+  bilangan_uji = int((bilangan_uji-digit_belakang-(digit_depan*10**(jumlah_angka_tersisa-1)))/10)
 
 if(result):
   print("Bilangan %s merupakan palindrome (Teknik 1)"%supposedly_palindrome)
