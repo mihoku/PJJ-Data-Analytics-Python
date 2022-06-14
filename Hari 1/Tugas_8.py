@@ -36,6 +36,10 @@ portion_saved = float(input("Berapa porsi yang Anda sisihkan dari gaji untuk dii
 investment_period = 0
 while(current_savings<portion_down_payment*total_cost):
   investment_period+=1
-  current_savings = current_savings*(investment_return/12)+portion_saved*annual_salary/12
+
+  #jumlah tabungan/investasi terakhir
+  #ditambah return investasi bulanan dari tabungan bulan sebelumnya
+  #ditambah dengan tabungan bulan ini
+  current_savings = current_savings +current_savings*(investment_return/12) +portion_saved*annual_salary/12 
 
 print("Jangka waktu investasi yang diperlukan adalah: %d bulan" %investment_period)
