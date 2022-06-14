@@ -38,7 +38,7 @@ while(current_savings<portion_down_payment*total_cost):
   investment_period+=1
 
   #jumlah tabungan/investasi terakhir
-  #ditambah return investasi bulanan dari tabungan bulan sebelumnya
+  #ditambah return investasi bulanan dari tabungan bulan sebelumnya, diasumsikan persentase imbal hasil tahunan atas investasi dibagi rata setiap bulan (5%/12bulan)
   #ditambah dengan tabungan bulan ini
   current_savings = current_savings +current_savings*(investment_return/12) +portion_saved*annual_salary/12 
 
