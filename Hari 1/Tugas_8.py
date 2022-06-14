@@ -38,4 +38,4 @@ while(current_savings<portion_down_payment*total_cost):
   investment_period+=1
   current_savings = current_savings*(investment_return/12)+portion_saved*annual_salary/12
 
-print(investment_period)
+print("Jangka waktu investasi yang diperlukan adalah: %d bulan" %investment_period)
